@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio Digital</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <div id="welcome-message">
+    <p>
+      <strong>SEJA BEM-VINDO(A) AO CARDÁPIO!</strong><br />
+      Desenvolvedor Lucas Santana<br />
+      <a href="https://www.linkedin.com/in/llucassantana/" target="_blank"
+        >LinkedIn</a
+      >
+      |
+      <a href="https://github.com/lLucasSantana" target="_blank">GitHub</a>
+    </p>
+  </div>
+
+  <body>
+    <header>
+      <h1>Restaurante São Miguel</h1>
+    </header>
+
+    <main>
+      <section id="entradas">
+        <h2>Entradas</h2>
+        <ul>
+          <li data-nome="Bruschetta" data-preco="15">Bruschetta - R$ 15,00</li>
+          <li data-nome="Salada Caprese" data-preco="18">
+            Salada Caprese - R$ 18,00
+          </li>
+          <li data-nome="Carpaccio" data-preco="25">Carpaccio - R$ 25,00</li>
+          <li data-nome="Ceviche" data-preco="30">Ceviche - R$ 30,00</li>
+          <li data-nome="Mini Quiches" data-preco="22">
+            Mini Quiches - R$ 22,00
+          </li>
+        </ul>
+      </section>
+
+      <section id="principais">
+        <h2>Pratos Principais</h2>
+        <ul>
+          <li data-nome="Filé à Parmegiana" data-preco="35">
+            Filé à Parmegiana - R$ 35,00
+          </li>
+          <li data-nome="Risoto de Camarão" data-preco="45">
+            Risoto de Camarão - R$ 45,00
+          </li>
+          <li data-nome="Frango Grelhado com Legumes" data-preco="40">
+            Frango Grelhado com Legumes - R$ 40,00
+          </li>
+          <li data-nome="Lasanha de Carne" data-preco="38">
+            Lasanha de Carne - R$ 38,00
+          </li>
+          <li data-nome="Feijoada Completa" data-preco="50">
+            Feijoada Completa - R$ 50,00
+          </li>
+        </ul>
+      </section>
+
+      <section id="sobremesas">
+        <h2>Sobremesas</h2>
+        <ul>
+          <li data-nome="Pudim" data-preco="10">Pudim - R$ 10,00</li>
+          <li data-nome="Petit Gâteau" data-preco="20">
+            Petit Gâteau - R$ 20,00
+          </li>
+          <li data-nome="Torta de Limão" data-preco="18">
+            Torta de Limão - R$ 18,00
+          </li>
+          <li data-nome="Brownie com Sorvete" data-preco="25">
+            Brownie com Sorvete - R$ 25,00
+          </li>
+          <li data-nome="Mousse de Maracujá" data-preco="12">
+            Mousse de Maracujá - R$ 12,00
+          </li>
+        </ul>
+      </section>
+
+      <section id="bebidas">
+        <h2>Bebidas</h2>
+        <ul>
+          <li data-nome="Refrigerante" data-preco="8">
+            Refrigerante - R$ 8,00
+          </li>
+          <li data-nome="Suco Natural" data-preco="10">
+            Suco Natural - R$ 10,00
+          </li>
+          <li data-nome="Água Mineral" data-preco="5">
+            Água Mineral - R$ 5,00
+          </li>
+          <li data-nome="Cerveja Artesanal" data-preco="15">
+            Cerveja Artesanal - R$ 15,00
+          </li>
+          <li data-nome="Caipirinha" data-preco="18">Caipirinha - R$ 18,00</li>
+          <li data-nome="Vinho Tinto" data-preco="50">
+            Vinho Tinto - R$ 50,00
+          </li>
+        </ul>
+      </section>
+
+      <section id="carrinho">
+        <h2>Seu Carrinho</h2>
+        <div id="itens-carrinho">
+          <p>O carrinho está vazio.</p>
+        </div>
+
+        <div id="total">
+          <strong>Total: R$ 0,00</strong>
+        </div>
+
+        <div id="forma-pagamento">
+          <label for="forma-pagamento">Escolha a forma de pagamento:</label>
+          <div class="payment-option">
+            <div class="option" data-value="Cartão de Crédito">
+              <i class="fas fa-credit-card"></i> Cartão de Crédito
+            </div>
+            <div class="option" data-value="Dinheiro">
+              <i class="fas fa-money-bill-wave"></i> Dinheiro
+            </div>
+            <div class="option" data-value="Pix">
+              <i class="fas fa-qrcode"></i> Pix
+            </div>
+          </div>
+        </div>
+
+        <button id="finalizar-pedido">Finalizar Pedido</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2024
+        <a
+          href="https://www.linkedin.com/in/llucassantana/"
+          style="color: #ffa500; text-decoration: none"
+          target="_blank"
+          >Lucas Santana Dev</a
+        >
+        - Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <!-- Div para carregar o carrinho mobile -->
+    <div id="carrinho-mobile"></div>
+
+    <script src="script.js"></script>
+    <script>
+      // Código JavaScript para carregar o carrinho mobile
+      if (window.innerWidth <= 768) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "carrinhomobile.html", true);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            document.getElementById("carrinho-mobile").innerHTML =
+              xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-image: url("");
+  background-size: cover;
+  /background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+#welcome-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.2em;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInSlide 2s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#welcome-message a {
+  color: #25d366;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#welcome-message a:hover {
+  color: #1da851;
+}
+
+#forma-pagamento {
+  margin-top: 15px;
+  font-size: 1em;
+}
+
+#forma-pagamento label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.payment-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #f1f1f1;
+}
+
+.option i {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #ff5733;
+}
+
+.option.selected {
+  border: 2px solid #ff5733;
+  box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
+}
+
+#carrinho {
+  position: fixed;
+  top: 110px;
+  right: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* dispositivos móveis */
+@media (max-width: 768px) {
+  #carrinho {
+    top: auto;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    max-height: 45vh;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+  }
+
+  #itens-carrinho li {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  #itens-carrinho button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+
+  /* mensagem dispositivos móveis */
+  #welcome-message {
+    top: 20%;
+    transform: translate(-50%, -20%);
+  }
+}
+
+#carrinho h2 {
+  color: #ff5733;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+#itens-carrinho {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+#itens-carrinho li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#itens-carrinho button {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+#itens-carrinho button:hover {
+  background-color: #e74c3c;
+}
+
+#total {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#finalizar-pedido {
+  background-color: #25d366;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#finalizar-pedido:hover {
+  background-color: #1da851;
+}
+
+.pedido {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pedido-btn {
+  background-color: #25d366;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pedido-btn:hover {
+  background-color: #1da851;
+}
+
+header {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin: 40px 0;
+}
+
+h2 {
+  color: #ff5733;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+ul li button {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+ul li button:hover {
+  background-color: #e74c3c;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
